@@ -31,7 +31,6 @@ public class EventListener implements GLEventListener{
 		
 		gl.glEnable(GL2.GL_TEXTURE_2D);
 		
-		image =  new ImageResource("/res/#therealdib.png");
 	}
 
 	public void reshape(GLAutoDrawable drawable, int x, int y, int width,
