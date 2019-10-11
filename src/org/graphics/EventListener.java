@@ -1,24 +1,23 @@
 package org.graphics;
 
+import org.resource.ImageResource;
+import org.world.World;
+
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
 public class EventListener implements GLEventListener{
 
-	public void display(GLAutoDrawable drawable) {
-		GL2 gl = drawable.getGL().getGL2();
+	public static GL2 gl = null;
+	public static ImageResource image = null;
 		
-		gl.glClearColor(0, 0, 0, 1);
+	public void display(GLAutoDrawable drawable) {
+		gl = drawable.getGL().getGL2();
+		
 		gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 		
-		gl.glColor3f(0, 0, 1);
-		gl.glBegin(GL2.GL_QUADS);
-			gl.glVertex2f(-50, -50);
-			gl.glVertex2f(50, -50);
-			gl.glVertex2f(50, 50);
-			gl.glVertex2f(-50, 50);
-		gl.glEnd();
+		World.render();
 	}
 
 	public void dispose(GLAutoDrawable drawable) {
@@ -26,7 +25,13 @@ public class EventListener implements GLEventListener{
 	}
 
 	public void init(GLAutoDrawable drawable) {
+		GL2 gl = drawable.getGL().getGL2();
 		
+		gl.glClearColor(0, 0, 0, 1);
+		
+		gl.glEnable(GL2.GL_TEXTURE_2D);
+		
+		image =  new ImageResource("/res/#therealdib.png");
 	}
 
 	public void reshape(GLAutoDrawable drawable, int x, int y, int width,
@@ -36,7 +41,9 @@ public class EventListener implements GLEventListener{
 		gl.glMatrixMode(GL2.GL_PROJECTION);
 		gl.glLoadIdentity();
 		
-		gl.glOrtho(-320, 320, -180, 180, -1, 1);
+		float unitsTall = Renderer.getWindowHeight() / (Renderer.getWindowWidth() / Renderer.unitsWide);
+		
+		gl.glOrtho(-Renderer.unitsWide / 2, Renderer.unitsWide / 2, -unitsTall / 2, unitsTall / 2, -1, 1);
 		gl.glMatrixMode(GL2.GL_MODELVIEW);
 	}
 
