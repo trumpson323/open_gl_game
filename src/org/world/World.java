@@ -1,0 +1,28 @@
+package org.world;
+
+import java.util.ArrayList;
+
+public class World {
+
+	
+	private static ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
+	
+	public static void update() {
+		
+		for (GameObject go : gameObjects) {
+			go.update();
+		}
+		
+	}
+	
+	public static void render() {
+	
+		for (GameObject go : gameObjects) {
+			go.render();
+		}
+	}
+	
+	public static void addObject(GameObject go) {
+		gameObjects.add(go);
+	}
+}
