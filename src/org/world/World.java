@@ -1,5 +1,6 @@
 package org.world;
 
+import java.util.ArrayList;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class World {
@@ -19,12 +20,13 @@ public class World {
 	
 	public static void render() {
 	
-		for (GameObject go : gameObjects) {
-			go.render();
-		}
 		for (Tile tile : tiles) {
 			tile.render();
 		}
+		for (GameObject go : gameObjects) {
+			go.render();
+		}
+	
 	}
 	
 	public static void addObject(GameObject go) {

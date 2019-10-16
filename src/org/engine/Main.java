@@ -2,6 +2,7 @@ package org.engine;
 
 import org.graphics.Renderer;
 import org.test.TestPlayer;
+import org.test.Test_Square;
 import org.world.World;
 import org.world.tiles.GrassTiles;
 
@@ -13,6 +14,7 @@ public class Main {
 		
 		//test code
 		World.addTile(new GrassTiles());
+		
 		World.addObject(new TestPlayer());
 	}
 

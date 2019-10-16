@@ -19,6 +19,7 @@ public class TestPlayer extends GameObject {
 		animations[0] = new Animation();
 		animations[0].frames = new ImageResource[1];
 		animations[0].frames[0] = new ImageResource("/res/image_2.png");
+		
 		//animations[0].frames[1] = new ImageResource("/res/Saved Pictures/tile001.png");
 		//animations[0].frames[2] = new ImageResource("/res/Saved Pictures/tile002.png");
 	}
