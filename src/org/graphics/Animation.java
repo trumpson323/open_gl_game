@@ -26,6 +26,8 @@ public class Animation {
 					currentFrame --;
 				}
 			}
+			
+			lastFrameTime = currentTime;
 		}
 	
 	}

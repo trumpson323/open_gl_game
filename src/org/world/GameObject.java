@@ -5,6 +5,7 @@ import org.graphics.Graphics;
 
 public class GameObject {
 
+	//remove static when done
 	public float x = 0;
 	public float y = 1;
 	
@@ -24,10 +25,12 @@ public class GameObject {
 	
 	public void render() {
 		
+		
 		animations[currentAnimation].play();
 		Graphics.setRotation(rotation);
 		Graphics.drawImage(animations[currentAnimation].getImage(), x, y, width, height);
 		Graphics.setRotation(0);
+		
 	}
 	
 }

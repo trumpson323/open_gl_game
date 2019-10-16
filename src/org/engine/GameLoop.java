@@ -12,7 +12,7 @@ public class GameLoop {
 	
 	private static long lastUpdateTime = 0;
 	
-	private static  int targetFPS = 60;
+	private static  int targetFPS = 30;
 	private static int targetTime = 1000000000 / targetFPS;
 	
 	public static void start () {
@@ -22,9 +22,6 @@ public class GameLoop {
 				running = true;
 				
 				lastUpdateTime = System.nanoTime();
-				
-				int fps = 0;
-				long lastFpsCheck = System.nanoTime()
 ;				
 				while (running) {
 					long currentTime = System.nanoTime();
@@ -76,6 +73,10 @@ public class GameLoop {
 		};
 		thread.setName("Game Loop");
 		thread.start();
+	}
+	
+	public static float updateDelta() {
+		return 1.0f / 1000000000 * targetTime;
 	}
 	
 }

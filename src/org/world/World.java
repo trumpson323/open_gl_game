@@ -1,11 +1,13 @@
 package org.world;
 
-import java.util.ArrayList;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class World {
 
 	
-	private static ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
+	private static ConcurrentLinkedQueue<Tile> tiles = new ConcurrentLinkedQueue<Tile>();
+
+	private static ConcurrentLinkedQueue<GameObject> gameObjects = new ConcurrentLinkedQueue<GameObject>();
 	
 	public static void update() {
 		
@@ -20,9 +22,15 @@ public class World {
 		for (GameObject go : gameObjects) {
 			go.render();
 		}
+		for (Tile tile : tiles) {
+			tile.render();
+		}
 	}
 	
 	public static void addObject(GameObject go) {
-		gameObjects.add(go);
+		gameObjects.offer(go);
+	}
+	public static void addTile(Tile tile) {
+		tiles.offer(tile);
 	}
 }

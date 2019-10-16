@@ -68,6 +68,7 @@ public class Graphics {
 		
 		gl.glRotatef(rotation, 0, 0, 1);
 		gl.glTranslatef(-x, -y, 0);
+		
 	}
 	
 	public static void setColor(float r, float g, float b, float a) {
