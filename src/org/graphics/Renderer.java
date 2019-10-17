@@ -20,6 +20,8 @@ public class Renderer {
 	
 	public static float cameraX = 0;
 	public static float cameraY = 0;
+	
+	public Graphics g;
 
 	public static void init () 
 	{

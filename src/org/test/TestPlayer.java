@@ -27,22 +27,22 @@ public class TestPlayer extends GameObject {
 		float xInput = 0;
 		float yInput = 0;
 		
-		if (KeyInput.getKey(KeyEvent.VK_LEFT)) {
-			xInput-=3;
-		}
 		
-		if (KeyInput.getKey(KeyEvent.VK_RIGHT)) {
-			xInput+=3;
-		}
-		
-		if (KeyInput.getKey(KeyEvent.VK_UP)) {
-			yInput+=3;
-		}
-		
-		if (KeyInput.getKey(KeyEvent.VK_DOWN)) {
-			yInput-=3;
-		}
-		
+			if (KeyInput.getKey(KeyEvent.VK_LEFT)) {
+				xInput-=3;
+			}
+			
+			if (KeyInput.getKey(KeyEvent.VK_RIGHT)) {
+				xInput+=3;
+			}
+			
+			if (KeyInput.getKey(KeyEvent.VK_UP)) {
+				yInput+=3;
+			}
+			
+			if (KeyInput.getKey(KeyEvent.VK_DOWN)) {
+				yInput-=3;
+			}
 		
 		x += xInput * GameLoop.updateDelta();
 		y += yInput * GameLoop.updateDelta();

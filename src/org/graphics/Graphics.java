@@ -21,6 +21,16 @@ public class Graphics {
 		
 		Texture tex = image.getTexture();
 		
+		if (x - width/2 - Renderer.cameraX > Renderer.unitsWide / 2 ||
+				x + width/2 - Renderer.cameraX < -Renderer.unitsWide / 2 ||
+				y - height/2 - Renderer.cameraY > Renderer.unitsTall / 2 ||
+				y + height/2 - Renderer.cameraY > Renderer.unitsTall / 2) {
+			return;
+		}
+		
+		
+		
+		
 		if (tex != null) {
 			gl.glBindTexture(GL2.GL_TEXTURE_2D, tex.getTextureObject());
 		}

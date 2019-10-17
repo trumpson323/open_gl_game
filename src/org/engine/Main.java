@@ -13,7 +13,6 @@ public class Main {
 		GameLoop.start();
 		
 		//test code
-		World.addTile(new GrassTiles());
 		
 		World.addObject(new TestPlayer());
 	}

@@ -9,9 +9,11 @@ import com.jogamp.opengl.GLEventListener;
 
 public class EventListener implements GLEventListener{
 
+	private static final Graphics g = null;
 	public static GL2 gl = null;
 	public static ImageResource image = null;
-		
+	public static Graphics g1 = new Graphics();	
+	
 	public void display(GLAutoDrawable drawable) {
 		gl = drawable.getGL().getGL2();
 		

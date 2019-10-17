@@ -22,7 +22,7 @@ public class GameLoop {
 				running = true;
 				
 				lastUpdateTime = System.nanoTime();
-;				
+				
 				while (running) {
 					long currentTime = System.nanoTime();
 					
